@@ -45,32 +45,27 @@ public class PracticeProblem {
 
 	//2
 	public static boolean totalWordsChecker(String input){
-		final int MAXIMUM_VALUE = 10;
-		String[] words = input.trim().split(" ");
-		return words.length <= MAXIMUM_VALUE;
+		final int MAXIMUM = 10;
+		if (input == null || input.trim().isEmpty()) {
+            return false; 
+		}
+		String[] words = input.trim().split("\\s+");
+		return words.length <= MAXIMUM;
 	}
 
 
 	//3
-	public static String minStrings(String str1, String str2, String str3){
+	public static String minString(String str1, String str2, String str3){
 		str1 = str1.toLowerCase();
 		str2 = str2.toLowerCase();
 		str3 = str3.toLowerCase();
-		String min = "";
-		if (str1.compareTo(str2)<0){
-			if (str1.compareTo(str3)<0){
-			min = str1;
+		String min = str1;
+		if (str2.compareTo(min)<0){
+			min = str2;
 		}
-			else{
+		if (str3.compareTo(min)<0){
 			min = str3;
-		}
-	}
-	else if (str2.compareTo(str3)<0){
-		min = str2;
-		}
-			else{
-			min = str3;
-		}
+		}	
 		return min;
 	}
 }
