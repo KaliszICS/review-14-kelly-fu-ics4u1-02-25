@@ -55,8 +55,8 @@ final static int MAXIMUM = 10;
 		String regex = "[^a-zA-Z'_]";
 		String[] words = input.trim().split(regex);
 		
-		for (int i = 0; i<words.length; i++){
-			if (words[i].length() > 0){
+		for (int i = 0; i < words.length; i++){
+			if (words[i].length() > 0){ // If there is a letter in the (). Eg. (a)
 				count++;
 			}
 		}
