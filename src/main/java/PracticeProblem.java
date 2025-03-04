@@ -1,4 +1,6 @@
 public class PracticeProblem {
+final static int MAXIMUM = 10;
+
 	public static void main(String args[]) {
 
 	}
@@ -45,13 +47,22 @@ public class PracticeProblem {
 
 	//2
 	public static boolean totalWordsChecker(String input){
-		final int MAXIMUM = 10;
-		if (input == null || input.trim().isEmpty()) {
+		int count = 0;
+		if (input == null) {
             return false; 
 		}
-		String[] words = input.trim().split("\\s+");
-		return words.length <= MAXIMUM;
+		else {
+		String regex = "[^a-zA-Z'_]";
+		String[] words = input.trim().split(regex);
+		
+		for (int i = 0; i<words.length; i++){
+			if (words[i].length() > 0){
+				count++;
+			}
+		}
 	}
+	return count<=MAXIMUM;	
+}
 
 
 	//3
